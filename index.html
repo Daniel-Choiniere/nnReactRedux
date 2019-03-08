@@ -21,9 +21,13 @@
                 name: 'Ryu',
                 age: 30
             }
-            
-            handleClick(e) {
-                console.log(e.target);
+
+            // cannot use (this.) with a custom function being called with React unless using an ARROW FUNCTION which binds it to the component instance
+            handleClick = (e) => {
+                this.setState({
+                    name: 'Yoshi'
+                })
+                console.log(this.state);
             }
             
             handleMouseOver(e) {
