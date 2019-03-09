@@ -22,30 +22,11 @@
                 age: 30
             }
 
-            // cannot use (this.) with a custom function being called with React unless using an ARROW FUNCTION which binds it to the component instance
-            handleClick = (e) => {
-                this.setState({
-                    name: 'Yoshi'
-                })
-                console.log(this.state);
-            }
-            
-            handleMouseOver(e) {
-                console.log(e.target, e.pageX);
-            }
-            
-            handleCopy(e) {
-                console.log('Try being original for once!!!')
-            }
-            
+            // A mix of HTML and JSX that is rendered as the main page
             render() {
                 return (
                     <div className="app-content">
-                        <h1>Hey, ninjas</h1>
-                        <p>My name is: { this.state.name } and I am { this.state.age }</p>
-                        <button onClick={ this.handleClick }>Click Me</button>
-                        <button onMouseOver={ this.handleMouseOver }>Hover me</button>
-                        <p onCopy={this.handleCopy}>What we think, we become</p>
+                        <h1>My name is { this.state.name }</h1>
                     </div>
                 );
             }
