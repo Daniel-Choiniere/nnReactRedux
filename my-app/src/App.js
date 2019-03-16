@@ -13,13 +13,23 @@ class App extends Component {
     ]
   }
   
+  addNinja = (ninja) => {
+    ninja.id = Math.random();
+    // makes an exact copy of the ninjas array using the spread opperator and adding the new "ninja" to the newly created array (therefore not altering the original array at all)
+    let ninjas = [...this.state.ninjas, ninja];
+    this.setState({
+      // the new ninjas property will now be equal to the new ninjas updated array
+      ninjas: ninjas
+    });
+  }
+  
   render() {
     return (
       <div className="App">
         <h1>My first React App!</h1>  
         <p>Welcome brah</p>
         <Ninjas ninjas={ this.state.ninjas }/>
-        <AddNinja />
+        <AddNinja addNinja={this.addNinja}/>
       </div>
     );
   }
