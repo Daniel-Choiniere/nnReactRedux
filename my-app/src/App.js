@@ -33,6 +33,17 @@ class App extends Component {
       ninjas: ninjas
     });
   }
+
+  // component is mounted once or every time the page is refreshed
+  componentDidMount() {
+    console.log('component mounted');
+  }
+  
+  // 
+  componentDidUpdate(prevProps, prevSate) {
+    console.log('component updated');
+    console.log(prevProps, prevSate);
+  }
   
   render() {
     return (
